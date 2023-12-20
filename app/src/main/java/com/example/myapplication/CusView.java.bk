@@ -1,0 +1,60 @@
+package com.example.myapplication;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.view.View;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PieView extends View {
+
+    private Paint barPaint;                             //柱状图画笔
+    private Paint shadowPaint;                          //阴影画笔
+    private int xOffset = 1, yOffset = 1;                    //x和y方向的偏移量
+    private int startX = 100, startY = 400, endX = 200, endY = 1000;
+    private int layerNum = 25;                            //画布的层数
+    private int barMargin = 50;                           //每个柱状体之前的间隔
+    private List<Integer> percents = new ArrayList<>(); //每种数据的数值，用于计算比例，画出柱状体高度
+    private int perSum;                                 //每种数据数值的总和
+
+    public PieView(Context context, int... pers) {
+        super(context);
+        for (int i = 0; i < pers.length; i++) {
+            perSum += pers[i];
+            percents.add(pers[i]);
+        }
+        init();
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int rectangleLen = endY - startY;           //矩形的长度
+        for (int i = 0; i < percents.size(); i++) {
+            int nowStartY = endY - (percents.get(i) * rectangleLen) / perSum;   //重新计算矩阵左上角y点的值
+            for (int j = layerNum; j >= 1; j--) {       //从后往前画
+                canvas.drawRect(startX + xOffset * j, nowStartY - yOffset * j, endX + xOffset * j, endY - yOffset * j, barPaint);
+                if (j == 1 || j == layerNum)           //画阴影
+                    canvas.drawRect(startX + xOffset * j, nowStartY - yOffset * j, endX + xOffset * j, endY - yOffset * j, shadowPaint);
+            }
+            int length = endX - startX;     //矩形边长
+            startX += length + barMargin;   //计算下一个柱状体的左上角x点的值
+            endX += length + barMargin;     //计算下一个柱状体的右下角x点的值
+        }
+    }
+
+    private void init() {    //初始化控件
+        barPaint = new Paint();
+        barPaint.setStyle(Paint.Style.FILL);
+        barPaint.setColor(Color.RED);
+
+        shadowPaint = new Paint();
+        shadowPaint.setStyle(Paint.Style.STROKE);
+        shadowPaint.setStrokeWidth(1);
+        shadowPaint.setColor(Color.parseColor("#515151"));
+    }
+
+}

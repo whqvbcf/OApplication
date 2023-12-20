@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-v24/android.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/assist_orb_navbar_scrim.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/assist_orb_scrim.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/brightness_mirror_background.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/dismiss_all_shape.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/dismiss_all_shape_animation.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_1x_mobiledata.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_data_unavailable.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_delete.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_device_thermostat_24.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_dnd.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_drag_handle.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_e_mobiledata.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_expand_less.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_expand_more.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_face_unlock.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_fingerprint.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_fingerprint_error.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_fullscreen_white_24dp.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_g_mobiledata.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_h_mobiledata.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_h_plus_mobiledata.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_headset.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_history.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_hotspot.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_hotspot_unavailable.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_info.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_info_outline.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_invert_colors.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_notify_button_bg.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_pause_white.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_person.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_play_arrow_white.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_power_low.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_power_off.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_power_restart.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_power_saver.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_auto_rotate.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_back.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_battery_saver.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_bluetooth_connected.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_bluetooth_connecting.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_brightness_auto_off.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_brightness_auto_on.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_cancel.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_cast_detail_empty.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_cast_off.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_cast_on.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_circle.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_dnd_detail_empty.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_lock_open.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_mobile_data_off.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_mobile_data_on.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_nfc_enabled.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_no_sim.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_plus.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_ringer_audible.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_ringer_silent.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_ringer_vibrate.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_settings.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_transfer.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_vpn.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_qs_wifi_no_network.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_remove.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_remove_circle.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_right.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_screenshot_delete.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_screenshot_edit.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_screenshot_share.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable-v24/ic_send.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/anim_drawable_bg.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/consumer_icon_item_enter.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/gradual_color_bg.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_backspace_black_24dp.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/ic_grid_line_off.xml" value="0.4555" />
+        <entry key="app/src/main/res/drawable/ic_grid_line_on.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/ic_next_arrow.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/ic_numpadkey_delete.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/ic_numpadkey_forget.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/ic_qs_settings.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/ic_subtitle_off.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/ic_subtitle_on.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/icon_keyguard_slider.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/numpadkey_background.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/numpadkey_background_normal.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/numpadkey_background_press.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/numpadkey_background_selected.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/pin_divider.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/preference_background_material.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/preference_background_material_normal.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/preference_background_material_press.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/preference_background_material_selected.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/ripple_drawable.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/symbol_btn_bg.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/symbol_btn_bg_normal.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/symbol_btn_bg_pressed.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/symbol_btn_bg_selected.xml" value="0.1395" />
+        <entry key="app/src/main/res/drawable/transparent_drawable_bg.xml" value="0.1395" />
+        <entry key="app/src/main/res/layout/activity_keypad_layout.xml" value="0.225" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.14565544952285284" />
+        <entry key="app/src/main/res/layout/activity_task.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/activity_three.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/layout/activity_txt_num.xml" value="0.3614583333333333" />
+        <entry key="app/src/main/res/layout/keyguard_num_pad_key.xml" value="0.225" />
+        <entry key="app/src/main/res/layout/num_key_board.xml" value="1.4210526315789473" />
+        <entry key="app/src/main/res/layout/pre_debug.xml" value="0.391304347826087" />
+        <entry key="app/src/main/res/layout/to_task.xml" value="0.16822916666666668" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

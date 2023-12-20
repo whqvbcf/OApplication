@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="keyboardview_keycode_delete">Delete</string>
+</resources>

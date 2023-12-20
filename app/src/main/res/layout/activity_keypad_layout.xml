@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:androidprv="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/keyguard_pin_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_weight="1"
+        android:layoutDirection="ltr"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rowex1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/tv_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="解锁设备"
+                android:textColor="#EAEAEA"
+                android:textSize="28sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/row0"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8"
+            android:paddingTop="1dp"
+            android:background="@drawable/transparent_drawable_bg"
+            android:paddingBottom="1dp">
+
+            <com.example.myapplication.view.ConsumerPasswordTextView
+                android:id="@+id/pinEntry"
+                android:layout_width="@dimen/keyguard_security_width"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="196dp"
+                android:gravity="center"
+                android:selectable="false"
+                android:focusable="false"
+                android:background="@drawable/transparent_drawable_bg"
+                android:textColor="@android:color/white"
+                androidprv:scaledTextSize="28" />
+
+            <!--            <com.example.myapplication.view.PasswordEditText-->
+            <!--                android:id="@+id/pinEntry"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="12dp"-->
+            <!--                android:layout_marginLeft="100dp"-->
+            <!--                android:layout_marginRight="100dp" />-->
+
+            <!--            <ImageButton-->
+            <!--                android:id="@+id/delete_button"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:layout_alignEnd="@+id/pinEntry"-->
+            <!--                android:layout_alignParentRight="true"-->
+            <!--                android:background="@drawable/ripple_drawable"-->
+            <!--                android:clickable="true"-->
+            <!--                android:contentDescription="@string/keyboardview_keycode_delete"-->
+            <!--                android:gravity="center_vertical"-->
+            <!--                android:paddingLeft="0dp"-->
+            <!--                android:paddingTop="8dip"-->
+            <!--                android:paddingRight="0dp"-->
+            <!--                android:paddingBottom="8dip"-->
+            <!--                android:src="@drawable/ic_backspace_black_24dp"-->
+            <!--                android:tintMode="src_in" />-->
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/pin_divider"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rowex2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="再次使用需重新设置"
+                android:textColor="#EAEAEA"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/row1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingStart="4dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="4dp">
+
+            <com.example.myapplication.view.NumPadKey
+                android:id="@+id/key1"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                androidprv:digit="1"
+                androidprv:textView="@+id/pinEntry" />
+
+            <com.example.myapplication.view.NumPadKey
+                android:id="@+id/key2"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                androidprv:digit="2"
+                androidprv:textView="@+id/pinEntry" />
+
+            <com.example.myapplication.view.NumPadKey
+                android:id="@+id/key3"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                androidprv:digit="3"
+                androidprv:textView="@+id/pinEntry" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingStart="4dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="4dp">
+
+            <com.example.myapplication.view.NumPadKey
+                android:id="@+id/key4"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                androidprv:digit="4"
+                androidprv:textView="@+id/pinEntry" />
+
+            <com.example.myapplication.view.NumPadKey
+                android:id="@+id/key5"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                androidprv:digit="5"
+                androidprv:textView="@+id/pinEntry" />
+
+            <com.example.myapplication.view.NumPadKey
+                android:id="@+id/key6"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                androidprv:digit="6"
+                androidprv:textView="@+id/pinEntry" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingStart="4dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="4dp">
+
+            <com.example.myapplication.view.NumPadKey
+                android:id="@+id/key7"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                androidprv:digit="7"
+                androidprv:textView="@+id/pinEntry" />
+
+            <com.example.myapplication.view.NumPadKey
+                android:id="@+id/key8"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                androidprv:digit="8"
+                androidprv:textView="@+id/pinEntry" />
+
+            <com.example.myapplication.view.NumPadKey
+                android:id="@+id/key9"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                androidprv:digit="9"
+                androidprv:textView="@+id/pinEntry" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingStart="4dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="4dp"
+            android:paddingBottom="4dp">
+
+            <!--            <Space-->
+            <!--                android:layout_width="0px"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:layout_weight="1" />-->
+            <ImageButton
+                android:id="@+id/forget_passcode_button"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_numpadkey_forget" />
+
+            <com.example.myapplication.view.NumPadKey
+                android:id="@+id/key0"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                androidprv:digit="0"
+                androidprv:textView="@+id/pinEntry" />
+
+            <ImageButton
+                android:id="@+id/delete_button"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_numpadkey_delete" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

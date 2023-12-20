@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:gravity="center"
+    android:orientation="vertical">
+<!--    android:background="@drawable/gradual_color_bg"-->
+
+    <LinearLayout
+        android:id="@+id/ll_input_password_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="1dp"
+            android:gravity="center"
+            android:text="324235JBJBJBSDFBbjjhkjhkj"
+            android:textColor="#EAEAEA"
+            android:textSize="26sp" />
+
+        <com.example.myapplication.view.PasswordEditText
+            android:id="@+id/password_entry"
+            android:layout_width="124dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:background="#3e3e3e"
+            android:cursorVisible="false"
+            android:clickable="false"
+            android:enabled="false"
+            android:focusable="false"
+            android:focusedByDefault="true"
+            android:imeOptions="actionNext|flagNoExtractUi|flagForceAscii"
+            android:inputType="number"
+            android:maxLength="4"
+            android:textColor="#00FFFFFF"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="SFDJLSKJFLASJFLJSLFDJLS12312124"
+            android:textColor="#EAEAEA"
+            android:textSize="1sp" />
+        <com.example.myapplication.view.NumKeyboard
+            android:id="@+id/numKeyboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_password_fail_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_lock" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:text="连续错误5次，设备已锁定，请24小时后重新尝试"
+            android:gravity="center"
+            android:textColor="#ccFFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/tv_password_lock_timecount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="sjglkjlkfglkdfjglkdjflgj"
+            android:textColor="#bdbdbd"
+            android:gravity="center"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Hello World!" />-->
+
+<!--        <Button-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textColor="#0a5a5a"-->
+<!--            android:textSize="30sp"-->
+<!--            android:text="|" />-->
+<!--        <ImageButton-->
+<!--            android:id="@+id/deleteButton"-->
+<!--            android:layout_width="match_parent"`-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@drawable/symbol_btn_bg"-->
+<!--            android:src="@drawable/ic_next_arrow" />-->
+<!--    </LinearLayout>-->
+    <!--    <ProgressBar-->
+    <!--        android:layout_width="72dp"-->
+    <!--        android:layout_height="72dp"-->
+    <!--        android:indeterminateDrawable="@drawable/anim_drawable_bg" />-->
+    <!--    <ProgressBar-->
+    <!--        android:layout_width="96dp"-->
+    <!--        android:layout_height="96dp"-->
+    <!--        android:indeterminateDrawable="@drawable/anim_drawable_bg" />-->
+    <!--    <ProgressBar-->
+    <!--        android:layout_width="144dp"-->
+    <!--        android:layout_height="144dp"-->
+    <!--        android:indeterminateDrawable="@drawable/anim_drawable_bg" />-->
+    <!--    <FrameLayout-->
+    <!--        android:id="@+id/frame"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content">-->
+
+    <!--    </FrameLayout>-->
+
+
+</LinearLayout>
