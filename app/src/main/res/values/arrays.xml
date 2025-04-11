@@ -32,4 +32,10 @@
         <item>TUV</item><!-- 8 -->
         <item>WXYZ</item><!-- 9 -->
     </string-array>
+
+    <string-array name="spinner_items">
+        <item>选项1</item>
+        <item>选项2</item>
+        <item>选项3</item>
+    </string-array>
 </resources>
