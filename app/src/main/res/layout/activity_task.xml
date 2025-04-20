@@ -26,5 +26,12 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/li0"
+        style="@style/CustomSpinnerStyle" />
 
 </RelativeLayout>

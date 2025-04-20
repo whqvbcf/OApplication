@@ -20,10 +20,14 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckedTextView;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +49,33 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
 
+        Spinner spinner = findViewById(R.id.spinner);
+        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(this, R.layout.spinner_dropdown_item, getResources().getStringArray(R.array.spinner_items));
+        spinner.setAdapter(adapter);
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int screenWidth = displayMetrics.widthPixels;
+        int offset = (screenWidth - 560) / 2;
+        spinner.setDropDownWidth(screenWidth);
+//        spinner.setDropDownHorizontalOffset(-offset);
+        Log.d(LOG_TAG, "=======screenWidth = " + screenWidth + " offset = " + offset);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                for (int i = 0; i < parent.getCount(); i++) {
+                    View item = parent.getChildAt(i);
+                    if (item instanceof CheckedTextView) {
+                        ((CheckedTextView) item).setChecked(i == position);
+                    }
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do nothing
+            }
+        });
     }
 
     @Override
