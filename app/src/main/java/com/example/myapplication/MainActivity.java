@@ -49,31 +49,15 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
 
-        Spinner spinner = findViewById(R.id.spinner);
-        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(this, R.layout.spinner_dropdown_item, getResources().getStringArray(R.array.spinner_items));
+        WifiSpinner spinner = findViewById(R.id.custom_spinner);
+        String[] items = {"无", "WEP", "WPA/WPA2 PSK", "802.1x EAP"};
+        WifiSpinnerAdapter adapter = new WifiSpinnerAdapter(this, R.layout.spinner_item, items);
         spinner.setAdapter(adapter);
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int screenWidth = displayMetrics.widthPixels;
-        int offset = (screenWidth - 560) / 2;
-        spinner.setDropDownWidth(screenWidth);
-//        spinner.setDropDownHorizontalOffset(-offset);
-        Log.d(LOG_TAG, "=======screenWidth = " + screenWidth + " offset = " + offset);
-
-        spinner.setBackgroundResource(android.R.color.transparent);
-        spinner.setBackgroundColor(Color.TRANSPARENT);
-
-        spinner.getPopupBackground().setAlpha(0);//okki
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                for (int i = 0; i < parent.getCount(); i++) {
-                    View item = parent.getChildAt(i);
-                    if (item instanceof CheckedTextView) {
-                        ((CheckedTextView) item).setChecked(i == position);
-                    }
-                }
+                adapter.setSelection(position);
             }
 
             @Override
@@ -81,6 +65,38 @@ public class MainActivity extends Activity {
                 // Do nothing
             }
         });
+
+//        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(this, R.layout.spinner_dropdown_item, getResources().getStringArray(R.array.spinner_items));
+//        spinner.setAdapter(adapter);
+//        DisplayMetrics displayMetrics = new DisplayMetrics();
+//        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+//        int screenWidth = displayMetrics.widthPixels;
+//        int offset = (screenWidth - 560) / 2;
+//        spinner.setDropDownWidth(screenWidth);
+////        spinner.setDropDownHorizontalOffset(-offset);
+//        Log.d(LOG_TAG, "=======screenWidth = " + screenWidth + " offset = " + offset);
+//
+//        spinner.setBackgroundResource(android.R.color.transparent);
+//        spinner.setBackgroundColor(Color.TRANSPARENT);
+//
+//        spinner.getPopupBackground().setAlpha(0);//okki
+//
+//        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                for (int i = 0; i < parent.getCount(); i++) {
+//                    View item = parent.getChildAt(i);
+//                    if (item instanceof CheckedTextView) {
+//                        ((CheckedTextView) item).setChecked(i == position);
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//                // Do nothing
+//            }
+//        });
     }
 
     @Override

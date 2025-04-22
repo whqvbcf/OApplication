@@ -26,12 +26,39 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/li0"
-        style="@style/CustomSpinnerStyle" />
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="安全性"
+            android:textSize="16sp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@android:drawable/arrow_down_float" />
+        <com.example.myapplication.WifiSpinner
+            android:id="@+id/custom_spinner"
+            style="@style/CustomSpinnerStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_background"
+            android:gravity="end"
+            android:paddingEnd="8dp"
+            android:spinnerMode="dropdown"
+            android:textAlignment="viewEnd" />
+
+
+
+    </LinearLayout>
 </RelativeLayout>

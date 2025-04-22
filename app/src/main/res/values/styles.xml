@@ -11,9 +11,10 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerHorizontal">true</item>
     </style>
-    <style name="CustomSpinnerStyle">
+    <style name="CustomSpinnerStyle" parent="Widget.AppCompat.Spinner.DropDown">
+        <item name="android:popupBackground">@drawable/spinner_list_background</item>
         <item name="android:spinnerMode">dropdown</item>
         <item name="android:dropDownWidth">560dp</item>
-        <item name="android:dropDownHorizontalOffset">0dp</item>
+        <item name="android:dropDownHorizontalOffset">60dip</item>
     </style>
 </resources>
