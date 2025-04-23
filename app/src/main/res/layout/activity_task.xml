@@ -24,6 +24,11 @@
             android:text="XT20201011AE86"
             android:textSize="30sp"
             android:textStyle="bold" />
+        <com.example.myapplication.WifiSpinner
+            android:id="@+id/wifi_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/spinner_items" />
     </LinearLayout>
 
     <LinearLayout
@@ -59,6 +64,6 @@
             android:textAlignment="viewEnd" />
 
 
-
     </LinearLayout>
+
 </RelativeLayout>

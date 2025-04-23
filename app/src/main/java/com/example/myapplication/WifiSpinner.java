@@ -6,23 +6,46 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Spinner;
+import android.content.res.TypedArray;
 
 public class WifiSpinner extends Spinner {
 
+    private static final int[] ATTRS = {android.R.attr.entries};
+
     public WifiSpinner(Context context) {
         super(context);
+        init(null);
         setDropdownWidthToScreenWidth(context);
+//        setBackgroundResource(R.drawable.blue_arrow);
     }
 
     public WifiSpinner(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init(attrs);
         setDropdownWidthToScreenWidth(context);
+//        setBackgroundResource(R.drawable.blue_arrow);
 //        setDropDownHorizontalOffset(-60); // 设置水平偏移量
     }
 
     public WifiSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init(attrs);
         setDropdownWidthToScreenWidth(context);
+//        setBackgroundResource(R.drawable.blue_arrow);
+    }
+
+    private void init(AttributeSet attrs) {
+        if (attrs != null) {
+            TypedArray a = getContext().obtainStyledAttributes(attrs, ATTRS);
+            int entriesResId = a.getResourceId(0, 0);
+            a.recycle();
+
+            if (entriesResId != 0) {
+                String[] items = getResources().getStringArray(entriesResId);
+                WifiSpinnerAdapter<CharSequence> adapter = new WifiSpinnerAdapter<>(getContext(), R.layout.spinner_item, items);
+                setAdapter(adapter);
+            }
+        }
     }
 
     private void setDropdownWidthToScreenWidth(Context context) {
@@ -37,7 +60,7 @@ public class WifiSpinner extends Spinner {
 
         // 计算下拉宽度
         int dropdownWidth = screenWidth - 2 * margin;
-        setDropDownWidth(dropdownWidth);
+        setDropDownWidth(screenWidth);
 
         // 设置水平偏移量为 16px
         int horizontalOffset = -60;
@@ -70,18 +93,13 @@ public class WifiSpinner extends Spinner {
                 // 获取 PopupWindow
                 android.widget.ListPopupWindow popupWindow = (android.widget.ListPopupWindow) popup.get(this);
                 if (popupWindow != null) {
-
-                    Log.d("WifiSpinner", "VerticalOff offset set to: " + this.getHeight());
                     // 设置偏移量，使弹框在 Spinner 下方
                     popupWindow.setVerticalOffset(this.getHeight());
-
-                    // 尝试更大的水平偏移量
-//                    int horizontalOffset = -50; // 尝试更大的偏移量
-//                    popupWindow.setHorizontalOffset(horizontalOffset);
-//                    Log.d("WifiSpinner", "Horizontal offset set to: " + horizontalOffset);
+                    popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.white_border));
                 }
+                ((WifiSpinnerAdapter) getAdapter()).setSelection(getSelectedItemPosition());
             } catch (Exception e) {
-                Log.e("WifiSpinner", "Error setting horizontal offset", e);
+                Log.e("WifiSpinner", "Error setting vertical offset", e);
             }
         }
     }

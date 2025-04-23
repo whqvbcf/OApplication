@@ -8,13 +8,16 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.CheckedTextView;
 
-public class WifiSpinnerAdapter extends ArrayAdapter<String> {
+public class WifiSpinnerAdapter<T extends CharSequence> extends ArrayAdapter<T> {
 
     private int selectedPosition = -1;
+    private LayoutInflater inflater;
 
-    public WifiSpinnerAdapter(Context context, int resource, String[] objects) {
+    public WifiSpinnerAdapter(Context context, int resource, T[] objects) {
         super(context, resource, objects);
+        inflater = LayoutInflater.from(context);
     }
 
     @Override
