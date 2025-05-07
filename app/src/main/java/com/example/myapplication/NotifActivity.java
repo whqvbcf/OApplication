@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -19,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-public class NotifActivity extends AppCompatActivity {
+public class NotifActivity extends Activity {
     private final String TAG = "SecActivity";
     private AlertDialog mAlertDialog;
     Context mContext;
