@@ -13,14 +13,14 @@ import android.view.MotionEvent;
 import android.view.View;
 
 public class PieChart extends View {
-	private float[] item;// ÿһ���ֵ
-	private float total; // �ܹ���ֵ
-	private String[] colors; // ����������ɫ
-	private float[] itemsAngle;// ÿһ����ռ�ĽǶ�
-	private float[] itemsBeginAngle;// ÿһ�����ʼ�Ƕ�
-	private float[] itemsRate;// ÿһ��ռ�ı���
-	private float radius = 200;// �뾶
-	private DecimalFormat fnum;// ��ʽ��float
+	private float[] item;// 每一项的值
+	private float total; // 总的数值
+	private String[] colors; // 每个部分的颜色
+	private float[] itemsAngle;// 每一项所占的角度
+	private float[] itemsBeginAngle;// 每一项的起始角度
+	private float[] itemsRate;// 每一项占的比例
+	private float radius = 200;// 半径
+	private DecimalFormat fnum;// 格式化float
 	private OnItemClickListener listener;
 	private int downX,downY,tempX,tempY;
 	private static final String[] DEFAULT_ITEMS_COLORS = { "#ff80FF",
@@ -28,14 +28,14 @@ public class PieChart extends View {
 		"#CD853F", "#006400", "#FF4500", "#D8BFD8", "#4876FF", "#FF00FF",
 		"#FF83FA", "#0000FF", "#363636", "#FFDAB9", "#90EE90", "#8B008B",
 		"#00BFFF", "#00FF00", "#006400", "#00FFFF", "#668B8B", "#000080",
-		"#008B8B" };//Ĭ��ͼƬ
+		"#008B8B" };//Ĭ定图片
 	public PieChart(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		fnum = new DecimalFormat("##0.00");
 	}
 
 	/**
-	 * ���ð뾶
+	 * 设置半径
 	 * 
 	 * @return
 	 */
@@ -44,7 +44,7 @@ public class PieChart extends View {
 	}
 
 	/**
-	 * ����ÿһ���ֵ
+	 * 设置每一项的值
 	 * 
 	 * @return
 	 */
@@ -59,11 +59,11 @@ public class PieChart extends View {
 	
 	/**
 	 *
-	 * ��ʼ������
+	 * 初始化数据
 	 *
 	 * @param item
 	 * @param colors
-	 * @param listener �¼�δ����
+	 * @param listener 事件监听器
 	 */
 	public void initSrc(float[] item,String[] colors,OnItemClickListener listener){
 		setItem(item);
@@ -73,7 +73,7 @@ public class PieChart extends View {
 	}
 
 	/**
-	 * ����ÿһ�����ɫ
+	 * 设置每一项的颜色
 	 * 
 	 * @param colors
 	 */
@@ -90,7 +90,7 @@ public class PieChart extends View {
 		float centerXY = radius;
 		Paint paint = new Paint();
 		paint.setAntiAlias(true);
-		if (item == null || item.length == 0) {// ���ʲô���ݶ�û��
+		if (item == null || item.length == 0) {// 如果什么数据都没有
 			paint.setTextSize(radius / 4);
 			paint.setStyle(Paint.Style.FILL);
 			paint.setTextAlign(Paint.Align.CENTER);
@@ -99,20 +99,20 @@ public class PieChart extends View {
 			float fontTotalHeight = fontMetrics.bottom - fontMetrics.top;
 			float offY = fontTotalHeight / 2 - fontMetrics.bottom;
 			float newY = centerXY + offY;
-			canvas.drawText("����", centerXY, newY, paint);
+			canvas.drawText("暂无数据", centerXY, newY, paint);
 		} else {
-			// ������
+			// 画扇形
 			RectF oval = new RectF(letftop, letftop, rightbottom, rightbottom);
 			for (int i = 0; i < item.length; i++) {
 				paint.setColor(Color.parseColor(colors[i]));
 				canvas.drawArc(oval, itemsBeginAngle[i], itemsAngle[i], true,
 						paint);
 			}
-			// ����Բ
+			// 画圆
 			paint.setStyle(Paint.Style.FILL);
 			paint.setColor(Color.parseColor("#ffffff"));
 			canvas.drawCircle(centerXY, centerXY, radius / 2, paint);
-			// ����
+			// 画文字
 			paint.setTextSize(radius / 4);
 			paint.setStyle(Paint.Style.FILL);
 			paint.setTextAlign(Paint.Align.CENTER);
@@ -126,7 +126,7 @@ public class PieChart extends View {
 	}
 
 	/**
-	 * ��������
+	 * 计算总数
 	 */
 	private void jsTotal() {
 		total = 0;
@@ -136,13 +136,13 @@ public class PieChart extends View {
 	}
 
 	/**
-	 * ����ÿ��item�Ĵ�С�����item��ռ�ĽǶȺ���ʼ�Ƕ�
+	 * 计算每个item的大小，设置item所占的角度和起始角度
 	 */
 	private void refreshItemsAngs() {
 		if (item != null && item.length > 0) {
-			itemsRate = new float[item.length];// ÿһ����ռ�ı���
-			itemsBeginAngle = new float[item.length];// ÿһ���Ƕ��ٽ��
-			itemsAngle = new float[item.length];// ÿһ���Ƕ��ٽ��
+			itemsRate = new float[item.length];// 每一项占的比例
+			itemsBeginAngle = new float[item.length];// 每一项的起始角度
+			itemsAngle = new float[item.length];// 每一项的角度
 			float beginAngle = 0;
 			for (int i = 0; i < item.length; i++) {
 				itemsRate[i] = (float) (item[i] * 1.0 / total * 1.0);
@@ -162,14 +162,14 @@ public class PieChart extends View {
 	}
 
 	/**
-	 * ֪ͨ��ʼ�滭
+	 * 通知开始绘制
 	 */
 	public void notifyDraw() {
 		invalidate();
 	}
 
 	/**
-	 * �ؼ��ɻ�õĿռ�
+	 * 控件可获得的空间
 	 */
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -192,7 +192,7 @@ public class PieChart extends View {
 //			System.out.println("MoveX"+tempX+"MoveY"+tempY);
 //			break;
 //		case MotionEvent.ACTION_UP:
-//			System.out.println("������");
+//			System.out.println("点击了");
 //			break;
 //		default:
 //			break;
