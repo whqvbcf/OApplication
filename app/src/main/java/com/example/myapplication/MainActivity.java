@@ -49,6 +49,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
 
+        // 启动IdleModeService
+        startIdleModeService();
+
         WifiSpinner spinner = findViewById(R.id.custom_spinner);
         String[] items = {"无", "WEP", "WPA/WPA2 PSK", "802.1x EAP"};
         WifiSpinnerAdapter adapter = new WifiSpinnerAdapter(this, R.layout.spinner_item, items);
@@ -156,5 +159,16 @@ public class MainActivity extends Activity {
         getActionBar().setCustomView(actionbarLayout, mP);
     }
 
-
+    /**
+     * 启动IdleModeService
+     */
+    private void startIdleModeService() {
+        try {
+            Intent serviceIntent = new Intent(this, IdleModeService.class);
+            startService(serviceIntent);
+            Log.d(LOG_TAG, "IdleModeService 已启动");
+        } catch (Exception e) {
+            Log.e(LOG_TAG, "启动 IdleModeService 失败: " + e.getMessage());
+        }
+    }
 }

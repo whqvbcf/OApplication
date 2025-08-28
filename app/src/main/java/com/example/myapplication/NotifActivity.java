@@ -146,13 +146,17 @@ public class NotifActivity extends Activity {
         channel.enableVibration(true);
         channel.setVibrationPattern(new long[]{10, 10});
         notificationManager.createNotificationChannel(channel);
-
+//通知添加点击跳转
+        Intent intent = new Intent(this, MainActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        
         Notification notification = new Notification.Builder(this, channelId)
                 .setContentTitle("Notification add low")
                 .setSmallIcon(android.R.drawable.star_off)
                 .setLargeIcon(BitmapFactory.decodeResource(mContext.getResources(), android.R.drawable.star_off))
                 .setPriority(Notification.PRIORITY_DEFAULT)
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setContentIntent(contentIntent) // 设置点击通知后跳转的意图
                 .build();
 
         notificationManager.notify(NOTIFICATION_ID, notification);

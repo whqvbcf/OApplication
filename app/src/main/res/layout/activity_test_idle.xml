@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="状态: 未知"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:id="@+id/start_service_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="启动服务"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/stop_service_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="停止服务"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/check_airplane_mode_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="检查飞行模式状态"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="说明：\n1. 点击'启动服务'开始监听系统广播\n2. 当设备进入light doze模式时，会设置10分钟后开启飞行模式\n3. 当屏幕点亮时，会取消定时任务并关闭飞行模式\n4. 应用会在开机时自动启动服务"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginTop="32dp" />
+
+</LinearLayout> 

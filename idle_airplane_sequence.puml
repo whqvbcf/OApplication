@@ -1,0 +1,61 @@
+@startuml 待机休眠进入飞行模式时序图
+title 待机休眠进入飞行模式时序图
+
+participant "System" as System
+participant "Connectivity" as Service
+participant "IdleModeReceiver" as Receiver
+participant "AlarmManager" as Alarm
+participant "BootReceiver" as Boot
+' participant "AirplaneModeHelper" as Helper
+' participant "PowerManager" as Power
+
+== 开机检测（新增）==
+System -> Boot: BOOT_COMPLETED开机完成广播
+Boot -> Boot: onBootCompleted()
+Boot -> Service: isAirplaneModeOn()检查飞行模式状态
+Service -> Boot: 返回飞行模式状态
+alt 飞行模式已开启
+    Boot -> Service: disableAirplaneMode()
+    Service -> Service: setAirplaneMode(false)
+    Service -> System: 发送ACTION_AIRPLANE_MODE_CHANGED广播
+    Service -> Boot: 返回airplaneMode状态
+end
+
+== 初始化工作 ==
+System -> Service: system启动
+Service -> Receiver: 初始化屏幕开/关的监听，设备IDLE状态的监听
+
+== 屏幕关闭 ==
+System -> Receiver: SCREEN_OFF屏幕关闭消息
+Receiver -> Receiver: handleScreenOff()
+Receiver -> Receiver: 记录屏幕状态
+
+== 设备进入休眠模式 ==
+System -> Receiver: 接受设备DEVICE IDLE消息
+Receiver -> Receiver: 获取PowerManager，获取设备休眠状态
+Receiver -> Receiver: 休眠状态时scheduleAirplane
+Receiver -> Alarm: 获取alarm，设置10分钟后进入飞行模式的休眠定时任务
+
+== 定时任务触发（开启飞行模式）==
+Alarm -> Receiver: IFLY_AIRPLANE_MODE_TIMER消息
+Receiver -> Receiver: enableAirplaneMode()
+Receiver -> Service:  setAirplaneMode(true)
+Service -> System: 发送ACTION_AIRPLANE_MODE_CHANGED广播
+Service -> Receiver: 返回airplaneMode状态
+
+== 屏幕点亮（取消定时任务）==
+System -> Receiver: SCREEN_ON屏幕点亮消息
+Receiver -> Receiver: handleScreenOn()
+Receiver -> Receiver: 记录屏幕状态
+Receiver -> Alarm: 检测是否有飞行模式定时任务，有则触发cancel流程
+Alarm -> Alarm: 取消定时任务
+Receiver -> Service: isAirplaneModeOn(),检查飞行模式状态
+Service -> Receiver: 返回飞行模式状态
+alt 飞行模式已开启
+    Receiver -> Service: disableAirplaneMode()
+    Service -> Service: setAirplaneMode(false)
+    Service -> System: 发送ACTION_AIRPLANE_MODE_CHANGED广播
+    Service -> Receiver: 返回airplaneMode状态
+end
+
+@enduml 
