@@ -34,6 +34,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/li1"
         android:layout_below="@id/li0"
         android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
@@ -63,6 +64,36 @@
             android:spinnerMode="dropdown"
             android:textAlignment="viewEnd" />
 
+    </LinearLayout>
+
+    <!-- 在custom_spinner下方添加新的WifiExSpinner -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/li1"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="网络类型"
+            android:textSize="16sp"
+            android:layout_marginEnd="16dp" />
+
+        <com.example.myapplication.WifiExSpinner
+            android:id="@+id/network_type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_background"
+            android:gravity="end"
+            android:paddingEnd="8dp"
+            android:spinnerMode="dropdown"
+            android:entries="@array/spinner_items"
+            android:textAlignment="viewEnd" />
 
     </LinearLayout>
 

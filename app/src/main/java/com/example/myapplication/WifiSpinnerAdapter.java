@@ -24,7 +24,7 @@ public class WifiSpinnerAdapter<T extends CharSequence> extends ArrayAdapter<T> 
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = createViewFromResource(position, convertView, parent);
         TextView textView = view.findViewById(R.id.spinner_text);
-        textView.setGravity(Gravity.END | Gravity.CENTER_VERTICAL); // 设置文字靠右并垂直居中
+        textView.setGravity(Gravity.START | Gravity.CENTER_VERTICAL); // 设置文字靠左并垂直居中
         // 隐藏分割线，因为这是显示在 Spinner 上的视图
         View divider = view.findViewById(R.id.divider);
         divider.setVisibility(View.GONE);

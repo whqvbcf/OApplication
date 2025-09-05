@@ -69,6 +69,24 @@ public class MainActivity extends Activity {
             }
         });
 
+        // 为新的network_type_spinner设置适配器
+        WifiExSpinner networkTypeSpinner = findViewById(R.id.network_type_spinner);
+        String[] networkTypes = {"WiFi", "移动网络", "蓝牙", "以太网"};
+        WifiSpinnerAdapter networkAdapter = new WifiSpinnerAdapter(this, R.layout.spinner_item, networkTypes);
+        networkTypeSpinner.setAdapter(networkAdapter);
+
+        networkTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // 处理网络类型选择
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do nothing
+            }
+        });
+
 //        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(this, R.layout.spinner_dropdown_item, getResources().getStringArray(R.array.spinner_items));
 //        spinner.setAdapter(adapter);
 //        DisplayMetrics displayMetrics = new DisplayMetrics();
