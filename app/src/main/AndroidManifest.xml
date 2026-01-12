@@ -17,8 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        
-        <receiver android:name=".IdleModeReceiver"
+
+        <receiver
+            android:name=".service.IdleModeReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -29,23 +30,26 @@
             </intent-filter>
         </receiver>
 
-        <service android:name=".IdleModeService"
+        <service
+            android:name=".service.IdleModeService"
             android:enabled="true"
             android:exported="false" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecActivity">
+        <activity android:name=".ui.activity.SecondaryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+                <!--                <category android:name="android.intent.category.LAUNCHER" />-->
             </intent-filter>
         </activity>
-        <activity android:name=".ThrActivity">
+        <activity 
+            android:name=".ui.activity.StorageInfoActivity"
+            android:theme="@style/Theme.StorageInfoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,8 +57,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NotifActivity"
-            android:exported="true">
+            android:name=".ui.activity.NotificationTestActivity"
+            android:exported="true"
+            android:theme="@style/Theme.NotificationTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

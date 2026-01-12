@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fragment退出：旋转+缩放效果 -->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <objectAnimator
+        android:propertyName="rotation"
+        android:valueFrom="0"
+        android:valueTo="-90"
+        android:duration="300" />
+    <objectAnimator
+        android:propertyName="scaleX"
+        android:valueFrom="1.0"
+        android:valueTo="0.5"
+        android:duration="300" />
+    <objectAnimator
+        android:propertyName="scaleY"
+        android:valueFrom="1.0"
+        android:valueTo="0.5"
+        android:duration="300" />
+    <objectAnimator
+        android:propertyName="alpha"
+        android:valueFrom="1.0"
+        android:valueTo="0.0"
+        android:duration="300" />
+</set>
+
+
+

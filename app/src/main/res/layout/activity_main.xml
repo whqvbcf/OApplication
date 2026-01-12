@@ -27,7 +27,7 @@
             android:textColor="#EAEAEA"
             android:textSize="26sp" />
 
-        <com.example.myapplication.view.PasswordEditText
+        <com.example.myapplication.ui.widget.password.PasswordEditText
             android:id="@+id/password_entry"
             android:layout_width="124dp"
             android:layout_height="52dp"
@@ -55,7 +55,7 @@
             android:text="SFDJLSKJFLASJFLJSLFDJLS12312124"
             android:textColor="#EAEAEA"
             android:textSize="1sp" />
-        <com.example.myapplication.view.NumKeyboard
+        <com.example.myapplication.ui.widget.password.NumKeyboardView
             android:id="@+id/numKeyboard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

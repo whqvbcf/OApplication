@@ -28,7 +28,7 @@
         android:textColor="@color/black" />
 
 
-    <com.example.myapplication.view.NumKeyboard
+    <com.example.myapplication.ui.widget.password.NumKeyboardView
         android:id="@+id/numKeyboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

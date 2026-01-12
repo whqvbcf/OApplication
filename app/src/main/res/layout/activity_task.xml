@@ -24,7 +24,7 @@
             android:text="XT20201011AE86"
             android:textSize="30sp"
             android:textStyle="bold" />
-        <com.example.myapplication.WifiSpinner
+        <com.example.myapplication.ui.widget.WifiSpinner
             android:id="@+id/wifi_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:src="@android:drawable/arrow_down_float" />
-        <com.example.myapplication.WifiSpinner
+        <com.example.myapplication.ui.widget.WifiSpinner
             android:id="@+id/custom_spinner"
             style="@style/CustomSpinnerStyle"
             android:layout_width="0dp"
@@ -83,7 +83,7 @@
             android:textSize="16sp"
             android:layout_marginEnd="16dp" />
 
-        <com.example.myapplication.WifiExSpinner
+        <com.example.myapplication.ui.widget.WifiExSpinner
             android:id="@+id/network_type_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
